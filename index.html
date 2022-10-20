@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+		function validate_password() {
+
+			var pass = document.getElementById('pass').value;
+			var username = document.getElementById('username').value;
+			if (pass == username) {
+				document.getElementById('wrong_pass_alert').style.color = 'red';
+				document.getElementById('wrong_pass_alert').innerHTML
+				= '☒ Username Không Được Trùng Với Password. Vui Lòng Nhập Lại !!!';
+				document.getElementById('create').disabled = true;
+				document.getElementById('create').style.opacity = (0.4);
+			} else {
+				document.getElementById('wrong_pass_alert').style.color = 'green';
+				document.getElementById('wrong_pass_alert').innerHTML =
+					'🗹 Password Hợp Lệ. Chúc Mừng Bạn !!!';
+				document.getElementById('create').disabled = false;
+				document.getElementById('create').style.opacity = (1);
+			}
+		}
+
+		function wrong_pass_alert() {
+			if (document.getElementById('pass').value != "" &&
+				document.getElementById('username').value != "") {
+				alert("Đơn Đăng Ký Của Bạn Đã Được Lưu Vào Bộ Nhớ!");
+			} else {
+				alert("Vui Lòng Nhập Đầy Đủ Thông Tin Còn Trống!!!");
+			}
+		}
+	</script>
+
+    <title>Register Form</title>
+    <style>
+        ul{
+            border: 1px solid black;
+            background-color: beige;
+            list-style-type: none; text-align: center; display: block;
+        }
+        li a{
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+        li{
+            display: inline-block; width: 18%;
+        }
+        
+    
+
+/* Style all input fields  */
+ input {
+  /* width: 80%; */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+}
+input[type=reset]{
+    background-color: #04AA6D;
+  color: white;
+} 
+#create{
+    background-color: #04AA6D;
+  color: white;
+  border-radius: 100px;
+  border: 1px solid #ccc;
+  padding:12px;
+} 
+
+/* Style the container for inputs */
+/* .container {
+  background-color: #f1f1f1;
+  padding: 20px;
+} */
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "&#10006;";
+}
+body{
+    background-color: yellow;
+}
+fieldset{
+    background-color: white;
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <fieldset>
+    <legend><h1>Register Form</h1></legend>
+    <form action="baitap2.html">
+    <table>
+        <div class="container">
+          
+            <div class="main">
+                <div class="username">
+                    <tr>
+                        <td><label for="username">UserName:</label></td>
+                        <td><input type="text" id="username"name="username"placeholder="Username"required></td>
+                    </tr>
+                </div>
+
+                <div class  ="pass">
+                    <tr>
+                    <td><label for="pass">Password:</label></td>
+                    <td><input id="pass"type="password"name="pass"placeholder="Enter Password"required"" onkeyup="validate_password()"></td>
+                    </tr>
+                    <tr>
+                    <td><label for="confirm_pass">Confirm Password:</label></td>    
+                    <td><input id="confirm_pass"type="password"name="confirm_pass"placeholder="Confirm Password"required></td>
+                    </tr>
+                </div>
+                <span id="wrong_pass_alert"></span>
+               
+            </div>
+
+
+            <!-- <tr>
+            <td><label for="usrname">Username:</label></td> 
+            <td><input type="text" id="usrname" name="usrname" required minlength="6" maxlength="16" title="Phải chứa ít nhất 6 ký tự trở lên và không quá 16 ký tự" required></td>
+            </tr>
+            <tr>
+            <td><label for="pass">Password:</label></td>
+            <td><input type="password" id="pass" name="psw" maxlength="16" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Phải chứa ít nhất một số và một chữ hoa và chữ thường và ít nhất 6 ký tự trở lên và không quá 16 ký tự" required></td>
+            </tr>
+        </div>
+          
+          
+        <tr>
+            <td>Confirm Password:</td>
+            <td><input type="password" name="confirmpassword" minlength="6"></td>
+        </tr> -->
+        <tr>
+            <td>FullName:</td>
+            <td><input type="text" name="text"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" id="id1" name="gender" value="Male">
+                <label for="id1">Male</label>
+                <input type="radio" id="id2" name="gender" value="Female">
+                <label for="id2">Female</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Date of Birth:</td>
+            <td><input type="date" name="birthday" min="1990-01-01" max="2022-10-13"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" placeholder="ab12@123.123" maxlength="12" pattern="[0-9a-zA-Z]{4}[@][0-9a-zA-Z]{3}[.][0-9a-zA-Z]{3}"</td>
+        </tr>
+        <tr>
+            <td><label for="phone">Number:</label></td>
+            <td><input type="phone" maxlength="10" id="phone" name="phone" placeholder="0799996769" pattern="[0-9]{2}[0-9]{4}[0-9]{4}" required></td>
+        </tr>
+        <tr>
+            <td>Hobbies:</td>
+            <td><input type="checkbox" id="swimming" name="checkbox"><label for="swimming">Swimming</label><input type="checkbox">Dancing<input type="checkbox">Shopping</td>
+        </tr>
+        <tr>
+            <td>Comment:</td>
+            <td><Textarea style="width: 250px;height: 80px;" name="comment"></Textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 
+                <div class="buttons">
+                <button id="create"class="submit_btn"onclick="wrong_pass_alert()">Submit</button><input type="reset" name="reset" value="Reset">
+                </div>
+            </td>
+            <!-- <td>
+                <input type="submit" name="submit" value="Submit"><input type="reset" name="reset" value="Reset">
+            </td>        -->
+        </tr>   
+    </table>
+    </form>
+            <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+</fieldset>  
+
+</body>
+</html>
